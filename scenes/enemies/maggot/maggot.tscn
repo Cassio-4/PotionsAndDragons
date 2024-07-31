@@ -191,7 +191,7 @@ position = Vector2(0, -0.557716)
 shape = SubResource("RectangleShape2D_k2v4e")
 
 [node name="Health" parent="." instance=ExtResource("3_64fgi")]
-health = 60
+health = 50
 
 [node name="Weapon" parent="." instance=ExtResource("4_fn3xb")]
 script = ExtResource("5_mbegx")

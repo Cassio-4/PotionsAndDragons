@@ -24,4 +24,4 @@ func set_sprite_region():
 func _on_area_2d_body_entered(body):
 	if body.has_method("handle_pickup"):
 		body.handle_pickup(self.type)
-	queue_free()
+		queue_free()

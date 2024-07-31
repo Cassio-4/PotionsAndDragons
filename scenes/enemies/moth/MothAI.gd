@@ -28,19 +28,24 @@ var current_state: int = -1:
 func _ready():
 	current_state = State.SLEEP
 	GlobalSignals.player_lamp_changed.connect(self.lamp_changed)
-	GlobalSignals.player_spawned.connect(self.navigation_setup)
+	#GlobalSignals.player_spawned.connect(self.navigation_setup)
+	
 	
 func initialize(a_actor: CharacterBody2D, a_weapon: MothWeapon, a_team: int):
 	self.actor = a_actor
 	self.weapon = a_weapon
 	self.team = a_team
+	navigation_setup()
+	
 
-func navigation_setup(a_player):
+func navigation_setup():
 	# Wait for a physics frame for safety 
 	await get_tree().physics_frame
-	target = a_player
+	target = get_tree().get_first_node_in_group("player")
 	if target:
 		navigation_agent.target_position = target.global_position
+		if target.lamp.is_lamp_active:
+			current_state = State.SEEK
 
 func _physics_process(_delta):
 	match current_state:

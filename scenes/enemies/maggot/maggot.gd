@@ -14,6 +14,9 @@ func _ready():
 
 func _physics_process(_delta):
 	update_animations()
+	
+func late_ai_target_setup(target):
+	ai.target = target
 
 func update_animations():
 	var direction = "down"

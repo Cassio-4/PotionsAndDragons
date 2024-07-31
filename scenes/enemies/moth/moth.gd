@@ -7,6 +7,9 @@ func _ready():
 	weapon.initialize(team.team, 0.5)
 	weapon.visible = false
 
+func late_ai_target_setup(target):
+	ai.target = target
+
 func _physics_process(_delta):
 	update_animations()
 
