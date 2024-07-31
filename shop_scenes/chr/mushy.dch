@@ -1,0 +1,218 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "mushy",
+"description": "",
+"display_name": "Mushy",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"New portrait": {
+"export_overrides": {
+"image": "\"res://assets/mushy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TM_background": {
+"export_overrides": {
+"image": "\"res://assets/TM_background.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Plant": {
+"export_overrides": {
+"image": "\"res://assets/TX Plant.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Player": {
+"export_overrides": {
+"image": "\"res://assets/TX Player.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Props": {
+"export_overrides": {
+"image": "\"res://assets/TX Props.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Shadow": {
+"export_overrides": {
+"image": "\"res://assets/TX Shadow.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Shadow Plant": {
+"export_overrides": {
+"image": "\"res://assets/TX Shadow Plant.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Struct": {
+"export_overrides": {
+"image": "\"res://assets/TX Struct.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Tileset Grass": {
+"export_overrides": {
+"image": "\"res://assets/TX Tileset Grass.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Tileset Stone Ground": {
+"export_overrides": {
+"image": "\"res://assets/TX Tileset Stone Ground.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"TX Tileset Wall": {
+"export_overrides": {
+"image": "\"res://assets/TX Tileset Wall.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"bullet": {
+"export_overrides": {
+"image": "\"res://assets/bullet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"enemy": {
+"export_overrides": {
+"image": "\"res://assets/enemy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"grandma": {
+"export_overrides": {
+"image": "\"res://assets/grandma.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"itens": {
+"export_overrides": {
+"image": "\"res://assets/itens.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"maggot": {
+"export_overrides": {
+"image": "\"res://assets/maggot.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"maggot_spritesheet": {
+"export_overrides": {
+"image": "\"res://assets/maggot_spritesheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"moth": {
+"export_overrides": {
+"image": "\"res://assets/moth.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"moth_spritesheet": {
+"export_overrides": {
+"image": "\"res://assets/moth_spritesheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"moth_weapon": {
+"export_overrides": {
+"image": "\"res://assets/moth_weapon.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"mushy": {
+"export_overrides": {
+"image": "\"res://assets/mushy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"mushy_spritesheet": {
+"export_overrides": {
+"image": "\"res://assets/mushy_spritesheet.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

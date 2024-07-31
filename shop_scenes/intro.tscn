@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm8ddc4hyhau4"]
+
+[ext_resource type="Script" path="res://shop_scenes/runTimeline.gd" id="1_5dmqi"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_5dmqi")
