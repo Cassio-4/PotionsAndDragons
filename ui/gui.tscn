@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvpqf7tyrigyw"]
 
 [ext_resource type="FontFile" uid="uid://vgwftrbwtm12" path="res://assets/RobotoMono-Regular.ttf" id="1_1imhc"]
-[ext_resource type="Script" path="res://UI/HealthBar.gd" id="1_08d16"]
-[ext_resource type="Script" path="res://UI/gui.gd" id="1_f0tth"]
+[ext_resource type="Script" path="res://ui/HealthBar.gd" id="1_08d16"]
+[ext_resource type="Script" path="res://ui/gui.gd" id="1_f0tth"]
 [ext_resource type="Texture2D" uid="uid://c84trxqw7vukw" path="res://assets/ing_1.png" id="4_0wymo"]
 [ext_resource type="Texture2D" uid="uid://d0rnci2lu1vb2" path="res://assets/ing_2.png" id="5_i74ou"]
 [ext_resource type="Texture2D" uid="uid://dnahlbtod5pga" path="res://assets/ing_3.png" id="6_eovol"]

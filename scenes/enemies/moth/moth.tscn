@@ -428,7 +428,6 @@ shape = SubResource("CircleShape2D_wntdw")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
-debug_enabled = true
 
 [node name="Team" parent="." instance=ExtResource("6_38y6n")]
 position = Vector2(11.9828, -32.3745)

@@ -4,7 +4,7 @@ join mushy 1
 mushy (mushy): ...
 grandma: You need to gather ingredients for my potions. I will give you one potion for good luck.
 [wait time="1.0"]
-grandma: Here.
+grandma: Here. This potion will help you regain a little bit of energy during your journey, but be careful, because it will attract enemies. 
 You obtained a health potion.
 do GlobalSignals.change_scene("res://lvl1_scenes/1-1.tscn")
 [end_timeline]
