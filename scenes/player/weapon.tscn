@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxttccc1e6fe3"]
+
+[ext_resource type="Script" path="res://scenes/player/weapon.gd" id="1_85ags"]
+[ext_resource type="PackedScene" uid="uid://bocbpmlp7qwhu" path="res://scenes/projectile.tscn" id="2_2jcv8"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_85ags")
+Bullet = ExtResource("2_2jcv8")
+
+[node name="ProjectileSpawn" type="Marker2D" parent="."]
+position = Vector2(18, 0)
+
+[node name="ProjectileDirection" type="Marker2D" parent="."]
+position = Vector2(22, 0)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true

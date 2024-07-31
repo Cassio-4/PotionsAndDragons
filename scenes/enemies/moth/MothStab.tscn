@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgm02sx2jy8i3"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_lsona"]
+[ext_resource type="Texture2D" uid="uid://bqniffs8hekcd" path="res://assets/bullet.png" id="2_uljvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x323"]
+size = Vector2(4.91077, 4.91085)
+
+[node name="MothStab" type="Area2D"]
+script = ExtResource("1_lsona")
+speed = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.46874, 0.181776)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1x323")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.46433, 0.157499)
+rotation = 1.5708
+scale = Vector2(1, 0.491385)
+texture = ExtResource("2_uljvp")
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpjcdojbinjey"]
+
+[ext_resource type="Texture2D" uid="uid://ddn2p2rt2dwb3" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="1_73udv"]
+[ext_resource type="Script" path="res://scenes/player/lamp.gd" id="1_c61to"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sruym"]
+radius = 95.021
+
+[sub_resource type="Animation" id="Animation_iwwuo"]
+resource_name = "light_turn_on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cslio"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_20135"]
+resource_name = "light_turn_off"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kr2qv"]
+_data = {
+"RESET": SubResource("Animation_cslio"),
+"light_turn_off": SubResource("Animation_20135"),
+"light_turn_on": SubResource("Animation_iwwuo")
+}
+
+[node name="Lamp" type="Area2D"]
+script = ExtResource("1_c61to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["playerLight"]]
+shape = SubResource("CircleShape2D_sruym")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.43051e-06, -9.77516e-06)
+scale = Vector2(0.742188, 0.742188)
+color = Color(0.317129, 0.527396, 1.92523e-07, 1)
+energy = 0.0
+texture = ExtResource("1_73udv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kr2qv")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdtt7ua4xo8qu"]
+
+[ext_resource type="Script" path="res://scenes/enemies/moth/mothWeapon.gd" id="1_8i2lr"]
+
+[node name="MothWeapon" type="Node2D"]
+script = ExtResource("1_8i2lr")
+
+[node name="ProjectileSpawn" type="Marker2D" parent="."]
+position = Vector2(-2, 7)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvpqf7tyrigyw"]
+
+[ext_resource type="FontFile" uid="uid://vgwftrbwtm12" path="res://assets/RobotoMono-Regular.ttf" id="1_1imhc"]
+[ext_resource type="Script" path="res://UI/HealthBar.gd" id="1_08d16"]
+[ext_resource type="Script" path="res://UI/gui.gd" id="1_f0tth"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aytg2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cwyj"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_f0tth")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HealthSection" type="CenterContainer" parent="MarginContainer/Rows/TopRow"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/Rows/TopRow/HealthSection"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("1_1imhc")
+theme_override_styles/background = SubResource("StyleBoxFlat_aytg2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5cwyj")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_08d16")
+
+[node name="MiddleRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+mouse_filter = 2
+
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2

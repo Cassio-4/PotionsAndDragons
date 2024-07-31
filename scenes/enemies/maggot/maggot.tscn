@@ -1,0 +1,223 @@
+[gd_scene load_steps=21 format=3 uid="uid://c13mhwir43n2p"]
+
+[ext_resource type="Script" path="res://scenes/enemies/maggot/maggot.gd" id="1_v7cu1"]
+[ext_resource type="Texture2D" uid="uid://cp1bfw7kotx50" path="res://assets/maggot_spritesheet.png" id="2_xg5d2"]
+[ext_resource type="PackedScene" uid="uid://cqwfrsqy6urol" path="res://scenes/health.tscn" id="3_64fgi"]
+[ext_resource type="PackedScene" uid="uid://bxttccc1e6fe3" path="res://scenes/player/weapon.tscn" id="4_fn3xb"]
+[ext_resource type="Script" path="res://scenes/enemies/maggot/MaggotWeapon.gd" id="5_mbegx"]
+[ext_resource type="PackedScene" uid="uid://c0td25h5xrakn" path="res://scenes/enemies/maggot/MaggotProjectile.tscn" id="6_ibh6p"]
+[ext_resource type="Script" path="res://scenes/enemies/maggot/MaggotAI.gd" id="6_q1ui7"]
+[ext_resource type="PackedScene" uid="uid://dp3mijdgv61mh" path="res://scenes/team.tscn" id="6_vfxw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2v4e"]
+size = Vector2(32, 51.1154)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wntdw"]
+radius = 206.137
+
+[sub_resource type="Animation" id="Animation_5ow1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_xnc85"]
+resource_name = "down_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lykdc"]
+resource_name = "left_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_xaavx"]
+resource_name = "right_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_usasv"]
+resource_name = "up_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_6wp6d"]
+resource_name = "walk_down"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_bxvps"]
+resource_name = "walk_left"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_bnmjd"]
+resource_name = "walk_right"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_t44lg"]
+resource_name = "walk_up"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eppbx"]
+_data = {
+"RESET": SubResource("Animation_5ow1t"),
+"down_idle": SubResource("Animation_xnc85"),
+"left_idle": SubResource("Animation_lykdc"),
+"right_idle": SubResource("Animation_xaavx"),
+"up_idle": SubResource("Animation_usasv"),
+"walk_down": SubResource("Animation_6wp6d"),
+"walk_left": SubResource("Animation_bxvps"),
+"walk_right": SubResource("Animation_bnmjd"),
+"walk_up": SubResource("Animation_t44lg")
+}
+
+[node name="Maggot" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_v7cu1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_xg5d2")
+hframes = 6
+vframes = 3
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.557716)
+shape = SubResource("RectangleShape2D_k2v4e")
+
+[node name="Health" parent="." instance=ExtResource("3_64fgi")]
+health = 60
+
+[node name="Weapon" parent="." instance=ExtResource("4_fn3xb")]
+script = ExtResource("5_mbegx")
+Bullet = ExtResource("6_ibh6p")
+
+[node name="Team" parent="." instance=ExtResource("6_vfxw1")]
+team = 1
+
+[node name="MaggotAI" type="Node2D" parent="."]
+script = ExtResource("6_q1ui7")
+
+[node name="DetectionZone" type="Area2D" parent="MaggotAI"]
+visible = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaggotAI/DetectionZone"]
+shape = SubResource("CircleShape2D_wntdw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eppbx")
+}
+
+[connection signal="body_entered" from="MaggotAI/DetectionZone" to="MaggotAI" method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="MaggotAI/DetectionZone" to="MaggotAI" method="_on_detection_zone_body_exited"]

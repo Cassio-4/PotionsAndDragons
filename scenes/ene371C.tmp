@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbwoj80tr0muj"]
+
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_ke5cs"]
+[ext_resource type="Texture2D" uid="uid://cnf4rjevlfmjb" path="res://assets/enemy.png" id="3_i7rbe"]
+[ext_resource type="PackedScene" uid="uid://cqwfrsqy6urol" path="res://scenes/health.tscn" id="3_n1vaw"]
+[ext_resource type="PackedScene" uid="uid://bxttccc1e6fe3" path="res://scenes/weapon.tscn" id="4_vlgco"]
+[ext_resource type="Script" path="res://scenes/ai.gd" id="5_m4bsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2v4e"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wntdw"]
+radius = 165.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ke5cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_i7rbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k2v4e")
+
+[node name="Health" parent="." instance=ExtResource("3_n1vaw")]
+
+[node name="Weapon" parent="." instance=ExtResource("4_vlgco")]
+
+[node name="AI" type="Node2D" parent="."]
+script = ExtResource("5_m4bsm")
+
+[node name="PlayerDetectionZone" type="Area2D" parent="AI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetectionZone"]
+shape = SubResource("CircleShape2D_wntdw")
+
+[node name="PatrolTimer" type="Timer" parent="AI"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_player_detection_zone_body_entered"]
+[connection signal="body_exited" from="AI/PlayerDetectionZone" to="AI" method="_on_player_detection_zone_body_exited"]
+[connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_patrol_timer_timeout"]

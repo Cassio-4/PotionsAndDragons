@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bocbpmlp7qwhu"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_aiuj4"]
+[ext_resource type="Texture2D" uid="uid://dto6wxsc01nop" path="res://assets/itens.png" id="2_nm1sy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abpis"]
+radius = 7.55738
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_aiuj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_nm1sy")
+region_enabled = true
+region_rect = Rect2(16.3921, 0, 14.6079, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_abpis")
+debug_color = Color(0, 0.6, 0.701961, 0.129412)
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

@@ -1,0 +1,226 @@
+[gd_scene load_steps=18 format=3 uid="uid://58k3dbe5crsp"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_0usg0"]
+[ext_resource type="Texture2D" uid="uid://ddfrg20s5qw1p" path="res://assets/mushy_spritesheet.png" id="2_wbr6x"]
+[ext_resource type="PackedScene" uid="uid://bxttccc1e6fe3" path="res://scenes/player/weapon.tscn" id="4_2lk8r"]
+[ext_resource type="PackedScene" uid="uid://cqwfrsqy6urol" path="res://scenes/health.tscn" id="4_xxjfb"]
+[ext_resource type="PackedScene" uid="uid://dp3mijdgv61mh" path="res://scenes/team.tscn" id="5_c4km7"]
+[ext_resource type="PackedScene" uid="uid://bpjcdojbinjey" path="res://scenes/player/lamp.tscn" id="6_axy5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2v4e"]
+size = Vector2(32, 46)
+
+[sub_resource type="Animation" id="Animation_a1gjt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lamp/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lamp/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_50xsm"]
+resource_name = "walk_right"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_gkagx"]
+resource_name = "walk_left"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_w2h52"]
+resource_name = "walk_up"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_da8kb"]
+resource_name = "walk_down"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_58pvq"]
+resource_name = "up_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_lj15r"]
+resource_name = "down_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ebnrx"]
+resource_name = "right_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_7xj1a"]
+resource_name = "left_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6xeu"]
+_data = {
+"RESET": SubResource("Animation_a1gjt"),
+"down_idle": SubResource("Animation_lj15r"),
+"left_idle": SubResource("Animation_7xj1a"),
+"right_idle": SubResource("Animation_ebnrx"),
+"up_idle": SubResource("Animation_58pvq"),
+"walk_down": SubResource("Animation_da8kb"),
+"walk_left": SubResource("Animation_gkagx"),
+"walk_right": SubResource("Animation_50xsm"),
+"walk_up": SubResource("Animation_w2h52")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_0usg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.2, 1.087)
+texture = ExtResource("2_wbr6x")
+hframes = 6
+vframes = 3
+frame = 6
+region_rect = Rect2(0, 8, 32, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_k2v4e")
+
+[node name="Health" parent="." instance=ExtResource("4_xxjfb")]
+
+[node name="Weapon" parent="." instance=ExtResource("4_2lk8r")]
+
+[node name="Team" parent="." instance=ExtResource("5_c4km7")]
+
+[node name="CameraTransform" type="RemoteTransform2D" parent="."]
+
+[node name="Lamp" parent="." instance=ExtResource("6_axy5c")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a6xeu")
+}

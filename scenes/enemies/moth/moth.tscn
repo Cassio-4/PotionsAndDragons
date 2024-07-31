@@ -1,0 +1,222 @@
+[gd_scene load_steps=20 format=3 uid="uid://c0fh64kueuqbl"]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_lp32k"]
+[ext_resource type="Texture2D" uid="uid://blw46h5mvjpfo" path="res://assets/moth_spritesheet.png" id="2_jd4h8"]
+[ext_resource type="PackedScene" uid="uid://cqwfrsqy6urol" path="res://scenes/health.tscn" id="3_fg03i"]
+[ext_resource type="PackedScene" uid="uid://cdtt7ua4xo8qu" path="res://scenes/enemies/moth/mothWeapon.tscn" id="4_m1bru"]
+[ext_resource type="Script" path="res://scenes/enemies/moth/MothAI.gd" id="4_tnjtt"]
+[ext_resource type="PackedScene" uid="uid://dp3mijdgv61mh" path="res://scenes/team.tscn" id="6_38y6n"]
+[ext_resource type="PackedScene" uid="uid://cgm02sx2jy8i3" path="res://scenes/enemies/moth/MothStab.tscn" id="6_a5fkv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2v4e"]
+size = Vector2(22.6188, 50.4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wntdw"]
+radius = 52.0
+
+[sub_resource type="Animation" id="Animation_eqkm6"]
+resource_name = "walk_left"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_hj56p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_5eyfu"]
+resource_name = "walk_right"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_hff0i"]
+resource_name = "walk_up"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_g6r6c"]
+resource_name = "walk_down"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_gjges"]
+resource_name = "up_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_qr7nn"]
+resource_name = "left_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_dq0km"]
+resource_name = "right_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_qyh6g"]
+resource_name = "down_idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_irk4s"]
+_data = {
+"RESET": SubResource("Animation_hj56p"),
+"down_idle": SubResource("Animation_qyh6g"),
+"left_idle": SubResource("Animation_qr7nn"),
+"right_idle": SubResource("Animation_dq0km"),
+"up_idle": SubResource("Animation_gjges"),
+"walk_down": SubResource("Animation_g6r6c"),
+"walk_left": SubResource("Animation_eqkm6"),
+"walk_right": SubResource("Animation_5eyfu"),
+"walk_up": SubResource("Animation_hff0i")
+}
+
+[node name="Moth" type="CharacterBody2D" groups=["enemy"]]
+position = Vector2(2, -5)
+script = ExtResource("1_lp32k")
+movement_speed = 150
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1, 0.96)
+texture = ExtResource("2_jd4h8")
+hframes = 6
+vframes = 3
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.205654, 2.9362)
+shape = SubResource("RectangleShape2D_k2v4e")
+
+[node name="Health" parent="." instance=ExtResource("3_fg03i")]
+health = 30
+
+[node name="AI" type="Node2D" parent="."]
+script = ExtResource("4_tnjtt")
+
+[node name="DetectionZone" type="Area2D" parent="AI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/DetectionZone"]
+position = Vector2(-2.44595, 5)
+shape = SubResource("CircleShape2D_wntdw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Weapon" parent="." instance=ExtResource("4_m1bru")]
+Stab = ExtResource("6_a5fkv")
+
+[node name="Team" parent="." instance=ExtResource("6_38y6n")]
+team = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_irk4s")
+}
+
+[connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_detection_zone_body_exited"]
