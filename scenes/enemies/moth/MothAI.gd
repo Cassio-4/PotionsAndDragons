@@ -58,6 +58,7 @@ func _physics_process(_delta):
 			actor.velocity = actor.velocity_toward(next_path_position)
 			actor.move_and_slide()
 		State.ATTACK:
+			actor.velocity = Vector2.ZERO
 			if (self.target != null) and (weapon != null):
 				weapon.stab(target)
 		_:

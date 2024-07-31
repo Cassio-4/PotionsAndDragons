@@ -16,9 +16,11 @@ func initialize(a_team: int, a_cooldown: float):
 func stab(a_target):
 	if attack_cooldown.is_stopped() and Stab != null:
 		var stab_instance = Stab.instantiate()
+		stab_instance.visible = false
 		var direction = projectile_spawn.global_position.direction_to(a_target.global_position).normalized()
 		GlobalSignals.emit_signal("projectile_fired", stab_instance, bullet_speed, damage, team, 
 								projectile_spawn.global_position, direction)
+		$AnimationPlayer.play("stab")
 		attack_cooldown.start()
 	else:
 		pass

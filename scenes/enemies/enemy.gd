@@ -7,10 +7,6 @@ class_name Enemy
 @onready var team        = $Team
 @export var movement_speed: int
 
-func _ready():
-	ai.initialize(self, weapon, team.team)
-	weapon.initialize(team.team, 0.5)
-
 func velocity_toward(alocation: Vector2) -> Vector2:
 	return global_position.direction_to(alocation) * movement_speed
 

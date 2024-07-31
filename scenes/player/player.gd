@@ -54,7 +54,7 @@ func read_input():
 	velocity = velocity * speed
 	move_and_slide()
 	
-	look_at(get_global_mouse_position())
+	weapon.look_at(get_global_mouse_position())
 	
 func _physics_process(_delta):
 	read_input()
