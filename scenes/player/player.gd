@@ -3,10 +3,11 @@ class_name Player
 
 signal player_health_changed(new_health)
 signal died
+signal ingredient_picked(item)
 
 var direction : Vector2 = Vector2()
 
-@export var speed  : int = 250
+@export var speed  : int = 150
 
 @onready var team             = $Team
 @onready var weapon           = $Weapon
@@ -14,6 +15,7 @@ var direction : Vector2 = Vector2()
 @onready var camera_transform = $CameraTransform
 @onready var lamp             = $Lamp
 @onready var animation_player = $AnimationPlayer
+@onready var inventory        = $Inventory
 
 func _ready():
 	weapon.initialize(team.team, 0.5)
@@ -89,3 +91,8 @@ func handle_hit(damage, type=1):
 	emit_signal("player_health_changed", health_stat.health)
 	if health_stat.health <= 0:
 		emit_signal("died")
+
+func handle_pickup(item_type):
+	inventory.item_pickup(item_type)
+	emit_signal("ingredient_picked", inventory.ingredients)
+	

@@ -45,4 +45,8 @@ func get_team() -> int:
 func handle_hit(damage):
 	health_stat.health -= damage
 	if health_stat.health <= 0:
-		queue_free()
+		die()
+
+func die():
+	GlobalSignals.emit_signal("enemy_died", self.global_position)
+	queue_free()

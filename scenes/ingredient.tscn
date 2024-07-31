@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1xj8tirtnnrk"]
+
+[ext_resource type="Script" path="res://scenes/ingredient.gd" id="1_twjc7"]
+[ext_resource type="Texture2D" uid="uid://dto6wxsc01nop" path="res://assets/itens.png" id="2_t5tlp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mps3v"]
+radius = 15.0
+
+[node name="Ingredient" type="Node2D"]
+script = ExtResource("1_twjc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_t5tlp")
+region_enabled = true
+region_rect = Rect2(37, 3, 22, 26)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mps3v")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

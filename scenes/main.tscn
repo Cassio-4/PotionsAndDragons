@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddt4w63r022lq"]
+[gd_scene load_steps=27 format=3 uid="uid://ddt4w63r022lq"]
 
 [ext_resource type="Texture2D" uid="uid://bpxmiducxqe18" path="res://assets/TX Tileset Grass.png" id="1_8thob"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_o2tl4"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dvpqf7tyrigyw" path="res://ui/gui.tscn" id="8_5vgwv"]
 [ext_resource type="PackedScene" uid="uid://c13mhwir43n2p" path="res://scenes/enemies/maggot/maggot.tscn" id="10_g13p6"]
 [ext_resource type="PackedScene" uid="uid://c0fh64kueuqbl" path="res://scenes/enemies/moth/moth.tscn" id="10_osgdf"]
+[ext_resource type="Script" path="res://scripts/ItemManager.gd" id="11_q7cfh"]
+[ext_resource type="PackedScene" uid="uid://c1xj8tirtnnrk" path="res://scenes/ingredient.tscn" id="12_3daxo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwip7"]
 texture = ExtResource("1_pqgjo")
@@ -954,3 +956,7 @@ position = Vector2(-296, -240)
 
 [node name="Moth" parent="." instance=ExtResource("10_osgdf")]
 position = Vector2(398, -254)
+
+[node name="ItemManager" type="Node2D" parent="."]
+script = ExtResource("11_q7cfh")
+Ingredient = ExtResource("12_3daxo")

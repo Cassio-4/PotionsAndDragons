@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://58k3dbe5crsp"]
+[gd_scene load_steps=19 format=3 uid="uid://58k3dbe5crsp"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_0usg0"]
 [ext_resource type="Texture2D" uid="uid://ddfrg20s5qw1p" path="res://assets/mushy_spritesheet.png" id="2_wbr6x"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqwfrsqy6urol" path="res://scenes/health.tscn" id="4_xxjfb"]
 [ext_resource type="PackedScene" uid="uid://dp3mijdgv61mh" path="res://scenes/team.tscn" id="5_c4km7"]
 [ext_resource type="PackedScene" uid="uid://bpjcdojbinjey" path="res://scenes/player/lamp.tscn" id="6_axy5c"]
+[ext_resource type="Script" path="res://scenes/player/Inventory.gd" id="7_qmmdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2v4e"]
 size = Vector2(32, 46)
@@ -224,3 +225,6 @@ shape = SubResource("RectangleShape2D_k2v4e")
 libraries = {
 "": SubResource("AnimationLibrary_a6xeu")
 }
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("7_qmmdr")

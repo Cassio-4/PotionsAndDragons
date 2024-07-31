@@ -12,6 +12,7 @@ var player = null
 func _ready():
 	randomize()
 	GlobalSignals.projectile_fired.connect(projectile_manager.handle_projectile_spawned)
+	GlobalSignals.enemy_died.connect($ItemManager.handle_spawn_item)
 	spawn_player()
 	GlobalSignals.emit_signal("player_spawned", player)
 

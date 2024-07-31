@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvpqf7tyrigyw"]
+[gd_scene load_steps=9 format=3 uid="uid://dvpqf7tyrigyw"]
 
 [ext_resource type="FontFile" uid="uid://vgwftrbwtm12" path="res://assets/RobotoMono-Regular.ttf" id="1_1imhc"]
 [ext_resource type="Script" path="res://UI/HealthBar.gd" id="1_08d16"]
 [ext_resource type="Script" path="res://UI/gui.gd" id="1_f0tth"]
+[ext_resource type="Texture2D" uid="uid://c84trxqw7vukw" path="res://assets/ing_1.png" id="4_0wymo"]
+[ext_resource type="Texture2D" uid="uid://d0rnci2lu1vb2" path="res://assets/ing_2.png" id="5_i74ou"]
+[ext_resource type="Texture2D" uid="uid://dnahlbtod5pga" path="res://assets/ing_3.png" id="6_eovol"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aytg2"]
 
@@ -17,6 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -45,6 +50,77 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5cwyj")
 value = 100.0
 show_percentage = false
 script = ExtResource("1_08d16")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Rows/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientCont1" type="HBoxContainer" parent="MarginContainer/Rows/TopRow"]
+layout_mode = 2
+
+[node name="Counters" type="MarginContainer" parent="MarginContainer/Rows/TopRow/IngredientCont1"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Rows/TopRow/IngredientCont1/Counters"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_0wymo")
+expand_mode = 3
+
+[node name="Number" type="Label" parent="MarginContainer/Rows/TopRow/IngredientCont1/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1imhc")
+theme_override_font_sizes/font_size = 22
+text = "0"
+vertical_alignment = 1
+
+[node name="IngredientCont2" type="HBoxContainer" parent="MarginContainer/Rows/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Counters" type="MarginContainer" parent="MarginContainer/Rows/TopRow/IngredientCont2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Rows/TopRow/IngredientCont2/Counters"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("5_i74ou")
+expand_mode = 3
+
+[node name="Number" type="Label" parent="MarginContainer/Rows/TopRow/IngredientCont2/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1imhc")
+theme_override_font_sizes/font_size = 22
+text = "0"
+vertical_alignment = 1
+
+[node name="IngredientCont3" type="HBoxContainer" parent="MarginContainer/Rows/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Counters" type="MarginContainer" parent="MarginContainer/Rows/TopRow/IngredientCont3"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Rows/TopRow/IngredientCont3/Counters"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("6_eovol")
+expand_mode = 3
+
+[node name="Number" type="Label" parent="MarginContainer/Rows/TopRow/IngredientCont3/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1imhc")
+theme_override_font_sizes/font_size = 22
+text = "0
+"
+vertical_alignment = 1
 
 [node name="MiddleRow" type="HBoxContainer" parent="MarginContainer/Rows"]
 layout_mode = 2
