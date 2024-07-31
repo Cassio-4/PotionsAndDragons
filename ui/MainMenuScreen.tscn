@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf2atk8ccadr8"]
+[gd_scene load_steps=5 format=3 uid="uid://cf2atk8ccadr8"]
 
 [ext_resource type="Script" path="res://ui/main_menu_screen.gd" id="1_dy8lr"]
 [ext_resource type="FontFile" uid="uid://vgwftrbwtm12" path="res://assets/RobotoMono-Regular.ttf" id="2_8d87l"]
 [ext_resource type="StyleBox" uid="uid://bnohy2mb73uqj" path="res://ui/menu_style.tres" id="2_78xga"]
+[ext_resource type="AudioStream" uid="uid://3julnq5vcg6d" path="res://assets/menu.wav" id="4_fujhj"]
 
 [node name="MainMenuScreen" type="CanvasLayer"]
 process_mode = 3
@@ -54,6 +55,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_8d87l")
 theme_override_font_sizes/font_size = 36
 text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fujhj")
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c13mhwir43n2p" path="res://scenes/enemies/maggot/maggot.tscn" id="10_g13p6"]
 [ext_resource type="PackedScene" uid="uid://c0fh64kueuqbl" path="res://scenes/enemies/moth/moth.tscn" id="10_osgdf"]
 [ext_resource type="Script" path="res://scripts/ItemManager.gd" id="11_q7cfh"]
-[ext_resource type="PackedScene" uid="uid://c1xj8tirtnnrk" path="res://scenes/ingredient.tscn" id="12_3daxo"]
+[ext_resource type="PackedScene" uid="uid://bthclaxu1hp7" path="res://scenes/ingredient.tscn" id="12_3daxo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwip7"]
 texture = ExtResource("1_pqgjo")

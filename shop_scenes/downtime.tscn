@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctagrfohwqjbg"]
+
+[ext_resource type="Script" path="res://shop_scenes/runTimeline.gd" id="1_66koj"]
+
+[node name="Downtime" type="Node2D"]
+script = ExtResource("1_66koj")

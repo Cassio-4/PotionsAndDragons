@@ -7,3 +7,7 @@ signal enemy_died(a_position)
 
 func change_scene(scene_path: String):
 	get_tree().change_scene_to_file(scene_path)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
